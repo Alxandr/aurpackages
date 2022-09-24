@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["local>YoloDev/renovate-config"],
+  "prCreation": "immediate",
+  "regexManagers": [
+    {
+      "fileMatch": ["/PKGBUILD$"],
+      "matchStrings": ["github:(?<depName>.*?)\npkgver=(?<currentValue>.*)\n"],
+      "datasourceTemplate": "github-tags"
+    }
+  ]
+}
