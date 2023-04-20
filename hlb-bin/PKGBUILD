@@ -1,0 +1,24 @@
+# Maintainer: Aleksander Heintz <alxandr@alxandr.me>
+
+pkgname=hlb-bin
+_pkgname=hlb
+#github:openllb/hlb
+pkgver=0.4.0
+pkgrel=1
+pkgdesc="A developer-first language to build and test any software efficiently."
+url='https://github.com/openllb/hlb'
+arch=(x86_64)
+license=(custom)
+arch=('x86_64')
+provides=(hlb)
+depends=(glibc)
+
+source_x86_64=("https://github.com/openllb/hlb/releases/download/v$pkgver/hlb-linux-amd64" "https://github.com/openllb/hlb/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums_x86_64=('6478aa93b167bc02c0fab7ba8009e74080315c16c5bc9f2470eb3ac14a03be4a' '95e2e499537facedca30dcf37818004be9b4aa630878a02382939a8df3c6b2c4')
+
+package() {
+  cd "$srcdir/"
+
+  install -Dm644 "hlb-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm755 hlb-linux-amd64 "${pkgdir}/usr/bin/hlb"
+}
