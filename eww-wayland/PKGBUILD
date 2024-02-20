@@ -3,7 +3,7 @@
 pkgname=eww-wayland
 _pkgname=eww
 #github:elkowar/eww
-pkgver=0.4.0
+pkgver=0.5.0
 pkgrel=1
 pkgdesc="A standalone widget system for wayland made in Rust."
 url='https://github.com/elkowar/eww'
